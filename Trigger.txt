@@ -52,7 +52,7 @@ DECLARE
           'DELETE',
           SYSDATE);
       END IF;  -- Deleting      
-  END LISA_DML_TRIG;
-  ****Additional Changes****
--- End of DML 
+
+  END LISA_DML_TRIG;  
+-- End of DML trigger creation
 /

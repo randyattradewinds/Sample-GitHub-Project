@@ -44,7 +44,6 @@ TABLESPACE user_data    -- Code taken from objects.sql
     FREELIST GROUPS 1
   );
 -- Populate the employee table
--- This code was generated from a.csv file via the PL/SQL Developer text importer tool
 insert into sysdba.LISA_EmployeeData (employee_id, employee_name_first, employee_name_last, employee_name_middle, employee_phone, employee_email, emplyee_street, employee_city, employee_state,
    employee_zip, employee_social, employee_salary, employee_hiredate, employee_department, employee_status)
 values (1, 'Alfred', 'Alex', 'A', '11111111', 'Alex1111@email.com', 'AAA ave.', 'ATown', 'AA', 11111, 111111111, NULL, 'Jan 1 2018', 1, 1);
@@ -85,6 +84,7 @@ insert into sysdba.lisa_employeedata (employee_id, employee_name_first, employee
    employee_zip, employee_social, employee_salary, employee_hiredate, employee_department, employee_status)
 values (10, 'Jeff', 'John', 'J', '0000000', 'John0000@email.com', 'JJJ blvd.', 'JCity', 'JJ', 00000, 000000000, 1010.10, 'October 10 2018', 3, 1);
 
+--Commit to the database
 commit;
 -- End of employee table population
 -- ****** END OF EMPLOYEE TABLE STUFF *******
