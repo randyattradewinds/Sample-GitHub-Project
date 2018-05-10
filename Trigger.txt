@@ -1,0 +1,58 @@
+-- Create a DML trigger
+CREATE OR REPLACE TRIGGER LISA_DML_TRIG
+BEFORE INSERT OR UPDATE OR DELETE
+ON LISA_EmployeeData
+FOR EACH ROW
+DECLARE
+    myTrans VARCHAR2(20);
+  BEGIN
+    IF INSERTING OR UPDATING THEN  -- Insewrting and updating
+      IF INSERTING THEN
+        myTrans := 'INSERT';
+        ELSIF UPDATING THEN
+          myTrans := 'UPDATE';
+          END IF;
+       INSERT INTO LISA_EmployeeHistory
+       VALUES
+        ( :new.employee_ID,
+          :new.FirstName,
+          :new.LastName,
+          :new.MiddleName,
+          :new.Phone,
+          :new.Email,
+          :new.Street,
+          :new.City,
+          :new.State,
+          :new.Zip,
+          :new.Social,
+          :new.Salary,
+          :new.HireDate,
+          :new.Department,
+          :new.Status,
+          myTrans,
+          SYSDATE);
+     ELSE -- Deleting
+         INSERT INTO LISA_EmployeeHistory
+          VALUES
+         (:old.employee_ID,
+          :old.FirstName,
+          :old.LastName,
+          :old.MiddleName,
+          :old.Phone,
+          :old.Email,
+          :old.Street,
+          :old.City,
+          :old.State,
+          :old.Zip,
+          :old.Social,
+          :old.Salary,
+          :old.HireDate,
+          :old.Department,
+          :old.Status,
+          'DELETE',
+          SYSDATE);
+      END IF;  -- Deleting      
+  END LISA_DML_TRIG;
+  
+-- End of DML trigger creation
+/
