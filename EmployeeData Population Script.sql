@@ -1,8 +1,3 @@
-/*insert into sysdba.lisa_employeedata (employee_id, employee_name_first, employee_name_last, employee_name_middle, employee_phone, employee_email, emplyee_street, employee_city, employee_state,
-   employee_zip, employee_social, employee_salary, employee_hiredate, employee_department, employee_status)
-values (employee_ID, ' employee_Name_First', ' employee_Name_Last', ' employee_Name_Middle', ' employee_Phone', ' employee_Email', ' emplyee_Street', ' employee_City', ' employee_State', employee_Zip, employee_Social,
-   employee_Salary, ' employee_HireDate', employee_Department, employee_Status);*/
-
 insert into sysdba.LISA_EmployeeData (employee_id, employee_name_first, employee_name_last, employee_name_middle, employee_phone, employee_email, emplyee_street, employee_city, employee_state,
    employee_zip, employee_social, employee_salary, employee_hiredate, employee_department, employee_status)
 values (1, ' Alfred ', ' Alex ', ' A ', ' 11111111 ', ' Alex1111@email.com ', ' AAA ave. ', ' ATown ', ' AA ', 11111, 111111111, 111.11, ' Jan 1 2018 ', 1, 1);
